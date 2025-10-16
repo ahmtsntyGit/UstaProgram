@@ -1,9 +1,13 @@
-﻿// ==== ÇOKLU VATANDAŞ SENARYOSU ====
-// 1) Ustalar (varsa mevcut listen kalsın)
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using UstaPlatform.Alan;
 using UstaPlatform.Altyapi;
 using UstaPlatform.Fiyatlandirma;
 
+// ==== ÇOKLU VATANDAŞ SENARYOSU ====
+
+// 1) Ustalar
 var ustalar = new List<Usta>
 {
     new Usta { Id = 1, Ad = "Mehmet Usta", Uzmanlik = "Tesisatçı", Puan = 4.7, GunlukIsYuku = 1 },
@@ -35,6 +39,7 @@ var talepler = new (Vatandas K, string Aciklama, string Adres, decimal Taban, (i
 };
 
 // 4) Fiyat motoru (kuralları ve eklentileri 1 kez yükle)
+// Eğer arayüz adını 'FiyatKurali' yaptıysan bunu kullan; (IFiyatKurali kullanan eski dosyaları da uyumlu yaptığından emin ol)
 var motor = new FiyatMotoru(new FiyatKurali[] { new HaftaSonuEkUcretiKurali(), new AcilCagriUcretiKurali() });
 var eklentiKlasoru = Path.Combine(AppContext.BaseDirectory, "Plugins");
 motor.EklentileriYukle(eklentiKlasoru);
