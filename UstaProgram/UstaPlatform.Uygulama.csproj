@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<OutputType>Exe</OutputType>   <!-- Konsol uygulaması -->
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<ProjectReference Include="..\UstaPlatform.Alan\UstaPlatform.Alan.csproj" />
+		<ProjectReference Include="..\UstaPlatform.Fiyatlandirma\UstaPlatform.Fiyatlandirma.csproj" />
+		<ProjectReference Include="..\UstaPlatform.Altyapi\UstaPlatform.Altyapi.csproj" />
+	</ItemGroup>
+
+
+</Project>
